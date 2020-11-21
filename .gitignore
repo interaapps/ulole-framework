@@ -1,0 +1,23 @@
+# ENVIRONMENT FILES
+.env
+.env.local
+.env.production
+
+config.json
+env.json
+
+config.php
+env.php
+
+#IDE's
+
+/.idea
+*.iml
+
+# Dependency-managers
+/modules
+/uppm_target
+/vendor
+/note_modules
+/uppm.locks.json
+/composer.lock
