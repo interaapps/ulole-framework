@@ -103,22 +103,6 @@ $ php cli create:model Test
 ```
 ![https://i.imgur.com/62xwkgY.png](https://i.imgur.com/62xwkgY.png)
 
-## Extra
-
-### Using other template-engine
-#### Example: blade
-##### app/helper/helper.php
-```php
-use Jenssegers\Blade\Blade;
-
-$blade = new Blade("resources/views", "cache/views");
-
-function view($view, $vars=[]) {
-    global $blade;
-    return $blade->render($view, $vars);
-}
-```
-
 ### Migration
 #### Migration up
 ```bash
@@ -140,3 +124,28 @@ $ php cli migrate:status
 ```
 
 ![https://i.imgur.com/Se2tGmm.png](https://i.imgur.com/Se2tGmm.pnghttps://i.imgur.com/Se2tGmm.png)
+
+
+
+
+
+
+
+
+
+
+## Extra
+
+### Using other template-engine
+#### Example: blade
+##### app/helper/helper.php
+```php
+use Jenssegers\Blade\Blade;
+
+$blade = new Blade("resources/views", "cache/views");
+
+function view($view, $vars=[]) {
+    global $blade;
+    return $blade->render($view, $vars);
+}
+```
