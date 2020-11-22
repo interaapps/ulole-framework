@@ -1,3 +1,5 @@
+/cache
+
 # ENVIRONMENT FILES
 .env
 .env.local
@@ -18,6 +20,10 @@ env.php
 /modules
 /uppm_target
 /vendor
-/note_modules
+/node_modules
 /uppm.locks.json
 /composer.lock
+
+# testing
+/_modules
+/_vendor

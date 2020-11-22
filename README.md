@@ -5,7 +5,7 @@ The ulole-framework is a highly customizable PHP-Framework.
 ## Based on
 - [ulole-core](https://github.com/interaapps/ulole-core)
 - [ulole-orm](https://github.com/interaapps/ulole-orm)
-- [deverm router](https://github.com/interaapps/deverm)
+- [deverm router](https://github.com/interaapps/deverm-router)
 
 #### Installation
 Copy / Clone this repo and
@@ -65,7 +65,7 @@ php cli serve
 A simple serve command (Runs on localhost:8000)
 ### Repl:
 ```
-php cli repl
+$ php cli repl
 >>> ["Hello"=>"World",  "Yep" => 1337.1945, "Wait, what?" => null, "Am I allowed to eat chicken?" => true,  "Am I allowed to eat wasps?" => false, "Show me what I am allowed to" => [  "Doing nothing", true,  false, null, 31423 ], "give me user" => \app\model\User::table()->get() ]
 ...
 >>> echo "Hello world :)"
@@ -74,7 +74,7 @@ php cli repl
 
 Multiline works with a `\`
 ```bash
-php cli repl
+$ php cli repl
 >>> function test(){\
 ...   echo "Hello world :)";\
 ... }
@@ -99,6 +99,44 @@ We will also check for a `[`, `(`, `{`, `,`
 ### Create:
 There is a helpful tool for creating models and other stuff.
 ```
-php cli create:model Test
+$ php cli create:model Test
 ```
 ![https://i.imgur.com/62xwkgY.png](https://i.imgur.com/62xwkgY.png)
+
+## Extra
+
+### Using other template-engine
+#### Example: blade
+##### app/helper/helper.php
+```php
+use Jenssegers\Blade\Blade;
+
+$blade = new Blade("resources/views", "cache/views");
+
+function view($view, $vars=[]) {
+    global $blade;
+    return $blade->render($view, $vars);
+}
+```
+
+### Migration
+#### Migration up
+```bash
+$ php cli migrate:up
+Migrated resources\migrations\migration_220511_000000_create_users
+```
+
+#### Migration down
+```bash
+$ php cli migrate:status
+ model                               | migrated | version
+ migration_201122_001143_create_user | YES      | 1
+```
+
+#### Migration status
+```bash
+$ php cli migrate:down (how many versions down, optionak)
+Downgraded resources\migrations\migration_220511_000000_create_users
+```
+
+![https://i.imgur.com/Se2tGmm.png](https://i.imgur.com/Se2tGmm.pnghttps://i.imgur.com/Se2tGmm.png)

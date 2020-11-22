@@ -27,7 +27,7 @@ class App extends WebApplication {
             ->loadJSONFile("env.json"); // Using a json file
             
         $this->initDatabase(/*Config prefix*/ "database" /*, "main" (Default) */);
-        UloleORM::register("user", User::class);
+        UloleORM::register("users", User::class);
     }
 
     /**

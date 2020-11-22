@@ -1,9 +1,9 @@
 {
     "name": "interaapps/ulole-framework",
     "require": {
-        "interaapps/deverm": "^5.0.1",
-        "interaapps/uloleorm": "^2.0",
-        "interaapps/ulole": "^3.0"
+        "interaapps/deverm": "5.0.1",
+        "interaapps/uloleorm": "2.0.1",
+        "interaapps/ulole": "3.0.2"
     },
     "autoload": {
         "psr-4": {

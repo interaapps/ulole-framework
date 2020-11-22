@@ -5,9 +5,9 @@
     "author": "",
     "keywords": [],
     "modules": {
-        "uloleorm": "2.0",
+        "uloleorm": "2.0.1",
         "deverm": "5.0.1",
-        "ulole-core": "3.0.0"
+        "ulole-core": "3.0.2"
     },
     "namespaces": {},
     "serve": {
