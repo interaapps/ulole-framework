@@ -36,13 +36,18 @@ class App extends WebApplication {
      */
     public function run() {
         $router = $this->getRouter();
-
+        
         $router
             ->get("/a/(.*)", function($req, $res, $test = null){
                 $res->json([
                     "Yep" => $test
                 ]);
             });
+
+        $router->notFound(function(){
+            view("error", ["error" => "Page not found"]);
+            // return "Page not found";
+        });
 
         (require_once 'app/routes.php')($router);
 

@@ -7,7 +7,7 @@ use de\interaapps\ulole\router\Request;
 use de\interaapps\ulole\router\Response;
 
 class TestController {
-    public static function test(){
+    public static function test(Request $req, Response $res){
         return view("homepage", [
             'name' => "Me",
         ]);
