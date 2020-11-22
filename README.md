@@ -140,6 +140,7 @@ $ php cli migrate:status
 #### Example: blade
 ##### app/helper/helper.php
 ```php
+// composer require jenssegers\blade 
 use Jenssegers\Blade\Blade;
 
 $blade = new Blade("resources/views", "cache/views");
