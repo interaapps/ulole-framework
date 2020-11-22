@@ -128,15 +128,15 @@ Migrated resources\migrations\migration_220511_000000_create_users
 
 #### Migration down
 ```bash
-$ php cli migrate:status
- model                               | migrated | version
- migration_201122_001143_create_user | YES      | 1
+$ php cli migrate:down (how many versions down, optionak)
+Downgraded resources\migrations\migration_220511_000000_create_users
 ```
 
 #### Migration status
 ```bash
-$ php cli migrate:down (how many versions down, optionak)
-Downgraded resources\migrations\migration_220511_000000_create_users
+$ php cli migrate:status
+ model                               | migrated | version
+ migration_201122_001143_create_user | YES      | 1
 ```
 
 ![https://i.imgur.com/Se2tGmm.png](https://i.imgur.com/Se2tGmm.pnghttps://i.imgur.com/Se2tGmm.png)
