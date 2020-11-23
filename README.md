@@ -125,7 +125,9 @@ $ php cli migrate:status
 
 ![https://i.imgur.com/Se2tGmm.png](https://i.imgur.com/Se2tGmm.pnghttps://i.imgur.com/Se2tGmm.png)
 
-
+#### DB
+This is a tool to just walk around the database and create some sql-queries.
+![https://i.imgur.com/bJRM8EW.png](https://i.imgur.com/bJRM8EW.png)
 
 
 

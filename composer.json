@@ -3,7 +3,7 @@
     "require": {
         "interaapps/deverm": "5.0.2",
         "interaapps/uloleorm": "2.0.1",
-        "interaapps/ulole": "3.0.3"
+        "interaapps/ulole": "3.0.4"
     },
     "autoload": {
         "psr-4": {
