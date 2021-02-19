@@ -5,6 +5,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 /**/
 
+use app\App;
+use de\interaapps\ulole\core\Environment;
+
 chdir('..');
 
 $production = true;
@@ -26,4 +29,4 @@ if (file_exists('vendor/autoload.php'))
 // Running application
 
 require_once "app/helper/helper.php";
-\app\App::main(\de\interaapps\ulole\core\Environment::fromCurrent()->setProduction($production));
+App::main(Environment::fromCurrent()->setProduction($production));

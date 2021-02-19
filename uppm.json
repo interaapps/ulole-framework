@@ -6,8 +6,8 @@
     "keywords": [],
     "modules": {
         "uloleorm": "2.0.1",
-        "deverm": "5.0.2",
-        "ulole-core": "3.0.4"
+        "deverm": "5.0.3",
+        "ulole-core": "3.0.5"
     },
     "namespaces": {},
     "serve": {
