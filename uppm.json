@@ -9,10 +9,19 @@
         "deverm": "5.0.3",
         "ulole-core": "3.0.5"
     },
-    "namespaces": {},
+    "run": {
+        "cli": "cli"
+    },
     "serve": {
         "port": 8000,
         "directory": "public",
         "routerFile": "index.php"
+    },
+    "build": {
+        "type": "phar",
+        "run": "cli",
+        "ignored": [
+            ".git", ".idea", "README.md"
+        ]
     }
 }

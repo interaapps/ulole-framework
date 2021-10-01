@@ -4,7 +4,7 @@ COPY --chown=application . /app
 WORKDIR /app
 
 # Choose dependency manager (If you  use composer you need the 2nd one!)
-# RUN php uppm.php install
+# RUN php uppm.phar install
 RUN composer install
 
 ENV WEB_DOCUMENT_ROOT=/app/public
