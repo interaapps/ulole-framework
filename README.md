@@ -11,7 +11,7 @@ The ulole-framework is a highly customizable PHP-Framework.
 Copy / Clone this repo and
 ```bash
 # Uppm
-php uppm.php install
+php uppm.phar install
 # Or Composer
 composer install
 ```
