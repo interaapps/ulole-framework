@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 /**/
 
-use app\App;
+use com\example\myproject\App;
 use de\interaapps\ulole\core\Environment;
 
 chdir('..');
@@ -28,5 +28,5 @@ if (file_exists('vendor/autoload.php'))
 
 // Running application
 
-require_once "app/helper/helper.php";
+require_once "src/main/com/example/myproject/helper/helper.php";
 App::main(Environment::fromCurrent()->setProduction($production));

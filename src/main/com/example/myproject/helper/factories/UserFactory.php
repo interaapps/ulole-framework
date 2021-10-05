@@ -1,8 +1,8 @@
 <?php
-namespace app\helper\factories;
+namespace com\example\myproject\helper\factories;
 
 
-use app\model\User;
+use com\example\myproject\model\User;
 use de\interaapps\ulole\core\testing\factory\AssemblyLine;
 use de\interaapps\ulole\core\testing\factory\Factory;
 use de\interaapps\ulole\core\testing\factory\Faker;

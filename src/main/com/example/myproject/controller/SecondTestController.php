@@ -1,15 +1,13 @@
 <?php
-namespace app\controller;
+namespace com\example\myproject\controller;
 
 
-use app\App;
-use app\jobs\ExampleJob;
+use com\example\myproject\App;
+use com\example\myproject\jobs\ExampleJob;
 use de\interaapps\ulole\router\attributes\Controller;
 use de\interaapps\ulole\router\attributes\Route;
 use de\interaapps\ulole\router\Request;
 use de\interaapps\ulole\router\Response;
-
-// Requires PHP 8
 
 #[Controller("/jobs")]
 class SecondTestController {

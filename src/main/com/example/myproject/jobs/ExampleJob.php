@@ -1,5 +1,5 @@
 <?php
-namespace app\jobs;
+namespace com\example\myproject\jobs;
 
 
 use de\interaapps\ulole\core\jobs\Job;

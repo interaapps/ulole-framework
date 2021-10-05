@@ -1,23 +1,18 @@
 <?php
-namespace app;
+namespace com\example\myproject;
 
-use app\controller\SecondTestController;
-use app\model\User;
+use com\example\myproject\controller\SecondTestController;
+use com\example\myproject\controller\TestController;
+use com\example\myproject\model\User;
 use de\interaapps\ulole\core\jobs\JobModel;
 use de\interaapps\ulole\orm\UloleORM;
 use de\interaapps\ulole\core\Environment;
 use de\interaapps\ulole\core\WebApplication;
 use de\interaapps\ulole\core\traits\Singleton;
-use de\interaapps\ulole\router\Request;
-use de\interaapps\ulole\router\Response;
 
 class App extends WebApplication {
 
     use Singleton;
-
-    public static function main(Environment $environment){    
-        (new self())->start($environment);
-    }
 
     public function __construct() {
         self::setInstance($this);
@@ -61,12 +56,11 @@ class App extends WebApplication {
             // return "Page not found";
         });
 
-        // PHP 8+, uses new attributes/annotations
-        if (version_compare(PHP_VERSION, '8.0.0') >= 0)
-            $router->addController(SecondTestController::class);
+        $router->addController(TestController::class);
+        $router->addController(SecondTestController::class);
+    }
 
-        // If you want to initialize the routes in another file
-        (require_once 'app/routes.php')($router);
-
+    public static function main(Environment $environment){
+        (new self())->start($environment);
     }
 }

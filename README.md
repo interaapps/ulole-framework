@@ -20,9 +20,9 @@ composer install
 #### `app\App.php`
 ```php
 <?php
-namespace app;
+namespace com\example\myproject;
 
-use app\model\User;
+use com\example\myproject\model\User;
 use de\interaapps\ulole\orm\UloleORM;
 use de\interaapps\ulole\core\Environment;
 use de\interaapps\ulole\core\WebApplication;

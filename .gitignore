@@ -24,6 +24,4 @@ env.php
 /uppm.locks.json
 /composer.lock
 
-# testing
-/_modules
-/_vendor
+/target

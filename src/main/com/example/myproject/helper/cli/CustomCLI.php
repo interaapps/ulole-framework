@@ -1,7 +1,7 @@
 <?php
-namespace app\helper\cli;
+namespace com\example\myproject\helper\cli;
 
-use app\model\User;
+use com\example\myproject\model\User;
 use de\interaapps\ulole\core\cli\CLI;
 use de\interaapps\ulole\core\cli\CLIHandler;
 use de\interaapps\ulole\core\cli\Colors;

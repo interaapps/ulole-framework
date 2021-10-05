@@ -1,7 +1,7 @@
 <?php
 namespace resources\migrations;
 
-use app\helper\factories\UserFactory;
+use com\example\myproject\helper\factories\UserFactory;
 use de\interaapps\ulole\orm\Database;
 use de\interaapps\ulole\orm\migration\Blueprint;
 use de\interaapps\ulole\orm\migration\Migration;

@@ -1,7 +1,7 @@
 <?php
-namespace app\model;
+namespace com\example\myproject\model;
 
-use de\interaapps\ulole\core\traits\JSONModel;
+use de\interaapps\jsonplus\JSONModel;
 use de\interaapps\ulole\orm\ORMHelper;
 use de\interaapps\ulole\orm\ORMModel;
 

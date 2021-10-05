@@ -6,8 +6,8 @@
     "keywords": [],
     "modules": {
         "uloleorm": "2.0.1",
-        "deverm": "5.0.3",
-        "ulole-core": "3.0.5"
+        "deverm": "5.0.5",
+        "ulole-core": "3.0.6"
     },
     "run": {
         "cli": "cli"
@@ -21,7 +21,7 @@
         "type": "phar",
         "run": "cli",
         "ignored": [
-            ".git", ".idea", "README.md"
+            ".git", ".idea", "README.md", ".env"
         ]
     }
 }
