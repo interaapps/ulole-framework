@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <h1>Welcome to ulole!</h1>
+    <h1>Welcome to ulole, <?= $name ?? "" ?>!</h1>
     <div id="links">
         <a href="https://github.com/interaapps/ulole-framework/blob/master/README.md">Simple Overview</a>
         <a href="https://github.com/interaapps/ulole-framework/wiki">Docs</a>
