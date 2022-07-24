@@ -21,8 +21,7 @@ class TestController {
         $user = User::table()
             ->where("id", $userId)
             ->or( fn ($q) => $q->where("name", "test") )
-            ->get();
-        // Query: SELECT * FROM user WHERE `id` = ? OR ( `name` = ? ) LIMIT 1 ;
+            ->first();
         
         return view("homepage", [
             'name' => ($user === null) ? "Not found" : $user->name,

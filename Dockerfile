@@ -1,11 +1,11 @@
-FROM webdevops/php-nginx:8.0
+FROM webdevops/php-nginx:8.1
 
 COPY --chown=application . /app
 WORKDIR /app
 
 # Choose dependency manager (If you  use composer you need the 2nd one!)
-# RUN php uppm.phar install
-RUN composer install
+RUN php uppm.phar install
+# RUN composer install
 
 ENV WEB_DOCUMENT_ROOT=/app/public
 ENV WEB_DOCUMENT_INDEX=index.php
