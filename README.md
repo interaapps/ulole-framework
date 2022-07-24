@@ -36,16 +36,16 @@ class App extends WebApplication {
         self::setInstance( (new self())->start($environment) );
     }
 
-    public function init(){
+    public function init() : void {
         $this->getConfig()
             ->loadENVFile(".env"); 
             
         // A ulole-framework helper for UloleORM::database("main", new Database(...))
         $this->initDatabase(/*Config prefix*/ "database", "main");
-        UloleORM::register("user", User::class);
+        UloleORM::register(User::class);
     }
 
-    public function run() {
+    public function run() : void {
         $this->getRouter()
             ->get("/user/(\d+)", function($req, $res, int $userId){
                 $res->json([
