@@ -11,9 +11,9 @@ use de\interaapps\ulole\core\testing\factory\Faker;
 
 class UserFactory extends Factory
 {
-    public $model = User::class;
+    public string $model = User::class;
 
-    protected function production(AssemblyLine $assemblyLine)
+    protected function production(AssemblyLine $assemblyLine) : void
     {
         $assemblyLine->insert(function(User $user, Faker $faker){
             $user->name = $faker->fullName();
