@@ -1,7 +1,7 @@
 /cache
 
 # ENVIRONMENT FILES
-.enva
+.env
 .env.local
 .env.production
 

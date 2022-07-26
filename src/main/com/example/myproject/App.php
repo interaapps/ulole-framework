@@ -28,7 +28,7 @@ class App extends WebApplication {
             ->loadENV() // Loads environment variables
             // If the file doesn't exists it'll just ignore it without any exception!
             ->loadPHPFile("env.php")    // Uses the returned array in a php file
-            ->loadENVFile(".enva")       // A simple .enva file
+            ->loadENVFile(".env")       // A simple .enva file
             ->loadJSONFile("env.json"); // Using a json file
 
         $this->initDatabase(/*Config prefix*/ "database" /*, "main" (Default) */);
