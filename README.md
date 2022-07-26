@@ -7,14 +7,15 @@ The ulole-framework is a highly customizable PHP-Framework.
 - [ulole-orm](https://github.com/interaapps/ulole-orm)
 - [deverm router](https://github.com/interaapps/deverm-router)
 
-#### Installation
-Copy / Clone this repo and
+#### Create Project
 ```bash
-# Uppm
-php uppm.phar install
-# Or Composer
-composer install
+# With UPPM
+uppm create myapp interaapps/ulole-framework
+
+# Or with Composer
+composer create-project interaapps/ulole-framework myapp
 ```
+
 
 ## Example
 #### `app\App.php`
@@ -38,7 +39,7 @@ class App extends WebApplication {
 
     public function init() : void {
         $this->getConfig()
-            ->loadENVFile(".env"); 
+            ->loadENVFile(".enva"); 
             
         // A ulole-framework helper for UloleORM::database("main", new Database(...))
         $this->initDatabase(/*Config prefix*/ "database", "main");

@@ -1,11 +1,11 @@
 {
     "name": "ulole-framework",
-    "version": "3.1.1",
+    "version": "3.3.1",
     "description": "",
     "author": "",
     "keywords": [],
     "modules": {
-        "ulole-core": "3.1.1"
+        "ulole-core": "3.1.4"
     },
     "run": {
         "cli": "cli"
