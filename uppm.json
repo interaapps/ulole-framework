@@ -1,25 +1,28 @@
 {
     "name": "ulole-framework",
-    "version": "3.3.2",
-    "description": "",
-    "author": "",
-    "keywords": [],
-    "modules": {
-        "ulole-core": "3.1.4"
-    },
+    "version": "3.3.3",
+    "repositories": [],
     "run": {
         "cli": "cli"
+    },
+    "build": {
+        "type": "phar",
+        "run": "cli",
+        "ignored": [
+            ".git",
+            ".idea",
+            "README.md",
+            ".env"
+        ]
     },
     "serve": {
         "port": 8000,
         "directory": "public",
         "routerFile": "index.php"
     },
-    "build": {
-        "type": "phar",
-        "run": "cli",
-        "ignored": [
-            ".git", ".idea", "README.md", ".env"
-        ]
-    }
+    "modules": {
+        "ulole-core": "3.1.6"
+    },
+    "namespaceBindings": {},
+    "initScripts": []
 }

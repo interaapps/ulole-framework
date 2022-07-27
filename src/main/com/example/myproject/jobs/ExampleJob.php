@@ -1,4 +1,5 @@
 <?php
+
 namespace com\example\myproject\jobs;
 
 
@@ -9,8 +10,7 @@ class ExampleJob implements Job {
 
     public function __construct(
         private string $message
-    )
-    {
+    ) {
     }
 
     function run(JobHandler $jobHandler = null) {
@@ -22,7 +22,7 @@ class ExampleJob implements Job {
         if ($this->message == "pleaseThrowAnException")
             throw new \Exception("Oh no!");
 
-        file_put_contents("example_file.txt", file_get_contents("example_file.txt").$this->message);
+        file_put_contents("example_file.txt", file_get_contents("example_file.txt") . $this->message);
 
     }
 }

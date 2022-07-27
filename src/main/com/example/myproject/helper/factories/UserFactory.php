@@ -1,4 +1,5 @@
 <?php
+
 namespace com\example\myproject\helper\factories;
 
 
@@ -9,13 +10,11 @@ use de\interaapps\ulole\core\testing\factory\Faker;
 
 // app\factories\UserFactory::run(5)
 
-class UserFactory extends Factory
-{
+class UserFactory extends Factory {
     public string $model = User::class;
 
-    protected function production(AssemblyLine $assemblyLine) : void
-    {
-        $assemblyLine->insert(function(User $user, Faker $faker){
+    protected function production(AssemblyLine $assemblyLine): void {
+        $assemblyLine->insert(function (User $user, Faker $faker) {
             $user->name = $faker->fullName();
             $user->gender = "FEMALE";
             $user->password = password_hash($faker->password(), PASSWORD_BCRYPT);

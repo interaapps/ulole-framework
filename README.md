@@ -39,7 +39,7 @@ class App extends WebApplication {
 
     public function init() : void {
         $this->getConfig()
-            ->loadENVFile(".enva"); 
+            ->loadENVFile(".env"); 
             
         // A ulole-framework helper for UloleORM::database("main", new Database(...))
         $this->initDatabase(/*Config prefix*/ "database", "main");
@@ -48,7 +48,7 @@ class App extends WebApplication {
 
     public function run() : void {
         $this->getRouter()
-            ->get("/user/(\d+)", function($req, $res, int $userId){
+            ->get("/user/{i+:userId}", function($req, $res, int $userId){
                 $res->json([
                     "user" => User::table()->where("id", $userId)->get()
                 ]);

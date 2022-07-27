@@ -1,4 +1,5 @@
 <?php
+
 namespace com\example\myproject;
 
 use com\example\myproject\controller\SecondTestController;
@@ -23,7 +24,7 @@ class App extends WebApplication {
      * Global init. It'll be used for the web, cli and other places.
      * Handle databases (and other connections), configurations and more here.
      */
-    public function init() : void{
+    public function init(): void {
         $this->getConfig()
             ->loadENV() // Loads environment variables
             // If the file doesn't exists it'll just ignore it without any exception!
@@ -41,21 +42,22 @@ class App extends WebApplication {
     }
 
     /**
-     * This'll be called before running the app for the web.
+     * This will be called before running the app for the web.
      * Handle routes, views and other stuff needed for running for the web here.
      */
-    public function run() : void {
+    public function run(): void {
         $router = $this->getRouter();
 
         $router
-            ->get("/a/(.*)", function(Request $req, Response $res, string $test = null){
-                $res->json([
+            ->get("/a/{test}", function (Request $req, Response $res, string $test = null): array {
+                // Automatically turns this into JSON
+                return [
                     "Yep" => $test
-                ]);
+                ];
             });
 
-        $router->notFound(function(){
-            view("error", ["error" => "Page not found"]);
+        $router->notFound(function () {
+            return view("error", ["error" => "Page not found"]);
         });
 
         // Register controllers
@@ -65,7 +67,7 @@ class App extends WebApplication {
         );
     }
 
-    public static function main(Environment $environment){
+    public static function main(Environment $environment) {
         (new self())->start($environment);
     }
 }

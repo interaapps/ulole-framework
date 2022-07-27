@@ -1,4 +1,5 @@
 <?php
+
 namespace com\example\myproject\controller;
 
 
@@ -12,14 +13,14 @@ use de\interaapps\ulole\router\Response;
 #[Controller("/jobs")]
 class SecondTestController {
 
-    #[Route("/(.*)", method: "GET")]
-    public function useJob(Request $req, Response $res, $val) {
+    #[Route("/{*:val}", method: "GET")]
+    public function useJob(Request $req, Response $res, string $val): string {
 
         // Job Example
         $example = new ExampleJob($val);
         App::getInstance()->getJobHandler()->push($example);
 
-        return "HI";
+        return "Hi, Job created!";
     }
 
 }

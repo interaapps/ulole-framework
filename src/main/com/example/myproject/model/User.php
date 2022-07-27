@@ -1,8 +1,10 @@
 <?php
+
 namespace com\example\myproject\model;
 
 use de\interaapps\jsonplus\JSONModel;
 use de\interaapps\ulole\orm\attributes\Column;
+use de\interaapps\ulole\orm\attributes\CreatedAt;
 use de\interaapps\ulole\orm\attributes\Table;
 use de\interaapps\ulole\orm\ORMHelper;
 use de\interaapps\ulole\orm\ORMModel;
@@ -11,20 +13,26 @@ use de\interaapps\ulole\orm\ORMModel;
 class User {
     use ORMModel;
     use ORMHelper; // Adds more ORM-Helper like User::all() and User::get(id)
+
     use JSONModel; // Adds $user->json() and User::fromJson("{...}")
 
     #[Column]
     public int $id;
+
     #[Column]
-    public string $name;
+    public ?string $name;
+
     #[Column]
-    public string $password;
+    public ?string $password;
+
     #[Column]
-    public string $gender;
-    #[Column]
+    public ?string $gender;
+
+    #[Column(sqlType: "TIMESTAMP")]
+    #[CreatedAt]
     public string $createdAt;
 
-    public function setPassword($password){
+    public function setPassword($password) {
         $this->password = password_hash($password, PASSWORD_BCRYPT);
     }
 }
