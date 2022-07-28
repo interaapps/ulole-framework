@@ -4,7 +4,10 @@ namespace com\example\myproject;
 
 use com\example\myproject\controller\SecondTestController;
 use com\example\myproject\controller\TestController;
+use com\example\myproject\helper\cli\CustomCLI;
+use com\example\myproject\middlewares\ExampleMiddleware;
 use com\example\myproject\model\User;
+use de\interaapps\ulole\core\cli\CLIBootstrapper;
 use de\interaapps\ulole\core\jobs\JobModel;
 use de\interaapps\ulole\orm\UloleORM;
 use de\interaapps\ulole\core\Environment;
@@ -48,13 +51,14 @@ class App extends WebApplication {
     public function run(): void {
         $router = $this->getRouter();
 
-        $router
-            ->get("/a/{test}", function (Request $req, Response $res, string $test = null): array {
-                // Automatically turns this into JSON
-                return [
-                    "Yep" => $test
-                ];
-            });
+        $router->middleware("example", new ExampleMiddleware());
+
+        $router->get("/a/{test}", function (Request $req, Response $res, string $test = null): array {
+            // Automatically turns this into JSON
+            return [
+                "Yep" => $test
+            ];
+        });
 
         $router->notFound(function () {
             return view("error", ["error" => "Page not found"]);
@@ -65,6 +69,10 @@ class App extends WebApplication {
             new TestController(),
             new SecondTestController(),
         );
+    }
+
+    public function initCLI(CLIBootstrapper $cli): void {
+        $cli->register(new CustomCLI());
     }
 
     public static function main(Environment $environment) {

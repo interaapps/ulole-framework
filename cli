@@ -14,11 +14,12 @@ chdir(".");
 if (file_exists("vendor/autoload.php"))
     require_once "vendor/autoload.php";
 
-$app = (new App)
-    ->setInCLI(true) // Deactivates the web stuff
-    ->start(Environment::fromCurrent());
+$cli = new CLIBootstrapper($argv);
 
-(new CLIBootstrapper($argv))
-    ->register(new CustomCLI())
+$app = (new App)->setInCLI(true);
+$app->initCLI($cli);
+$app->start(Environment::fromCurrent());
+
+$cli
     ->addFrameworkHandlers($app)
     ->run();

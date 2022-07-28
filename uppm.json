@@ -1,6 +1,6 @@
 {
     "name": "ulole-framework",
-    "version": "3.3.3",
+    "version": "3.3.4",
     "repositories": [],
     "run": {
         "cli": "cli"
@@ -21,7 +21,7 @@
         "routerFile": "index.php"
     },
     "modules": {
-        "ulole-core": "3.1.6"
+        "ulole-core": "3.2.0"
     },
     "namespaceBindings": {},
     "initScripts": []
